@@ -64,7 +64,7 @@ class TextBasedChannel {
    * @property {boolean|SplitOptions} [split=false] Whether or not the message should be split into multiple messages if
    * it exceeds the character limit. If an object is provided, these are the options for splitting the message
    * @property {MessageResolvable} [replyTo] The message to reply to (must be in the same channel and not system)
-   */
+
 
   /**
    * Options provided to control parsing of mentions by Discord
