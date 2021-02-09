@@ -103,6 +103,7 @@ function makeImageUrl(root, { format = 'webp', size } = {}) {
   if (size && !AllowedImageSizes.includes(size)) throw new RangeError('IMAGE_SIZE', size);
   return `${root}.${format}${size ? `?size=${size}` : ''}`;
 }
+
 /**
  * Options for Image URLs.
  * @typedef {Object} ImageURLOptions
@@ -635,6 +636,7 @@ exports.APIErrors = {
   INVITE_ACCEPTED_TO_GUILD_NOT_CONTAINING_BOT: 50036,
   INVALID_API_VERSION: 50041,
   CANNOT_DELETE_COMMUNITY_REQUIRED_CHANNEL: 50074,
+  INVALID_STICKER_SENT: 50081,
   REACTION_BLOCKED: 90001,
   RESOURCE_OVERLOADED: 130000,
 };
@@ -671,6 +673,21 @@ exports.WebhookTypes = [
   null,
   'Incoming',
   'Channel Follower',
+];
+
+/**
+ * The value set for a sticker's type:
+ * * PNG
+ * * APNG
+ * * LOTTIE
+ * @typedef {string} StickerFormatTypes
+ */
+exports.StickerFormatTypes = [
+  // They start at 1
+  null,
+  'PNG',
+  'APNG',
+  'LOTTIE',
 ];
 
 function keyMirror(arr) {

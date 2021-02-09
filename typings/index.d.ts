@@ -2198,6 +2198,7 @@ declare module 'discord.js' {
     INVITE_ACCEPTED_TO_GUILD_NOT_CONTAINING_BOT: 50036;
     INVALID_API_VERSION: 50041;
     CANNOT_DELETE_COMMUNITY_REQUIRED_CHANNEL: 50074;
+    INVALID_STICKER_SENT: 50081;
     REACTION_BLOCKED: 90001;
     RESOURCE_OVERLOADED: 130000;
   }
@@ -3228,6 +3229,23 @@ declare module 'discord.js' {
   }
 
   type Status = number;
+
+  export class Sticker extends Base {
+    constructor(client: Client, data: object);
+    public asset: string;
+    public readonly createdTimestamp: number;
+    public readonly createdAt: Date;
+    public description: string;
+    public format: StickerFormatTypes;
+    public id: Snowflake;
+    public name: string;
+    public packID: Snowflake;
+    public previewAsset: string | null;
+    public tags: string[];
+    public url: string;
+  }
+
+  type StickerFormatTypes = 'PNG' | 'APNG' | 'LOTTIE';
 
   interface StreamOptions {
     type?: StreamType;
