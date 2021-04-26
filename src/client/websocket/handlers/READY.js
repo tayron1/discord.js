@@ -1,6 +1,7 @@
 'use strict';
 
 let ClientUser;
+const { Events } = require('../../../util/Constants');
 
 module.exports = (client, { d: data }, shard) => {
   if (client.user) {
@@ -18,4 +19,6 @@ module.exports = (client, { d: data }, shard) => {
   }
 
   shard.checkReady();
+  
+  client.emit(Events.READY_WS, data);
 };

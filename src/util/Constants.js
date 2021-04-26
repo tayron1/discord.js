@@ -221,6 +221,7 @@ exports.VoiceOPCodes = {
 exports.Events = {
   RATE_LIMIT: 'rateLimit',
   CLIENT_READY: 'ready',
+  READY_WS: 'readyWs',
   GUILD_CREATE: 'guildCreate',
   GUILD_DELETE: 'guildDelete',
   GUILD_UPDATE: 'guildUpdate',
