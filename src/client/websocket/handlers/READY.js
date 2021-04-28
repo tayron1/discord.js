@@ -19,6 +19,6 @@ module.exports = (client, { d: data }, shard) => {
   }
 
   shard.checkReady();
-  
+
   client.emit(Events.READY_WS, data);
 };
